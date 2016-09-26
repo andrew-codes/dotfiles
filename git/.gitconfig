@@ -1,0 +1,36 @@
+[user]
+  name = Andrew Smith
+  email = andrew@andrew.codes
+
+[alias]
+  gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
+  co = checkout
+
+[merge]
+  tool = bc
+[diff]
+  tool = bc
+
+[mergetool "bc"]
+  keepBackup = false
+  trustExitCode = true
+
+[difftool "bc"]
+
+[push]
+  default = simple
+
+[branch]
+  autosetuprebase = always
+
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  editor = atom --wait
+
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
+
+[gui]
+  gcwarning = false

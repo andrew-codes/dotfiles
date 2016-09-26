@@ -1,0 +1,19 @@
+# Virtual Machines
+.vagrant
+
+# OS related
+.DS_STORE
+Thumbs.db
+
+# IDE
+.idea
+*.suo
+
+# Dependencies
+node_modules
+/packages
+bower_components
+
+# Misc.
+*.log
+*.orig
