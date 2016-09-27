@@ -43,7 +43,7 @@ function pull() {
       remoteBranch=$1
   else
       origin='origin'
-      remoteBranch=`git branch`
+      remoteBranch=`git rev-parse --abbrev-ref HEAD`
   fi
   git pull --rebase $origin $remoteBranch
 }
@@ -65,7 +65,7 @@ function sb() {
         localBranch=$1
     else
         remote='origin'
-        localBranch=`git branch`
+        localBranch=`git rev-parse --abbrev-ref HEAD`
     fi
     git branch --set-upstream-to=$remote/$localBranch
 }
