@@ -58,7 +58,6 @@ function bash(command) {
 	console.log('bash', command);
 	return new Promise((resolve, reject) => {
 		exec(command, (error, stdout, stderr)=> {
-			console.log(error, stdout, stderr);
 			if (error) {
 				reject(error);
 				return;
@@ -76,7 +75,6 @@ function powershell(command) {
 			console.log(data.toString());
 		});
 		cmdProcess.stderr.on('data', (data)=> {
-			console.log(data.toString());
 			reject(data.toString());
 		});
 		cmdProcess.on('exit', ()=> {
