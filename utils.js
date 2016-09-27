@@ -16,11 +16,6 @@ const config = {
 module.exports.config = config;
 
 module.exports.mklink = (src, dest) => {
-	// try {
-	// 	fs.unlinkSync(dest);
-	// } catch (error) {
-	// 	console.error(error);
-	// }
     const srcPath = path.resolve(src);
     const destPath = path.resolve(dest);
 	if (config.isOsx) {
