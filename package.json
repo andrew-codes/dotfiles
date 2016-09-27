@@ -1,0 +1,12 @@
+{
+  "name": "devtools",
+  "version": "1.0.0",
+  "description": "Devtool settings and dotfiles",
+  "private": true,
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "keywords": [],
+  "author": "Andrew Smith <andrew@andrew.codes>",
+  "license": "MIT"
+}
