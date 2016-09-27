@@ -26,7 +26,7 @@ module.exports.mklink = (src, dest) => {
 	if (config.isOsx) {
 		command = `ln -sfn ${src} ${dest}`;
 	} else if (config.isWindows) {
-		command = `mklink "${dest}" "${src}"`;
+		command = `cmd /c mklink "${dest}" "${src}"`;
 	} else {
         throw new Error(config.unsupportedPlatformError);
     }
