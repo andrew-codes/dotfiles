@@ -1,4 +1,5 @@
-source $HOME/.env
+#!/bin/bash
+source $HOME/env.sh
 
 [ -f $HOME/alias.sh ] && source $HOME/alias.sh
 [ -f $HOME/git-completion.bash ] && source $HOME/git-completion.bash
@@ -14,7 +15,7 @@ source $HOME/.env
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # SSH
-SSH_ENV = $HOME/.ssh/environment
+SSH_ENV=$HOME/.ssh/environment
 function start_agent {
     echo "Initialising new SSH agent..."
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}

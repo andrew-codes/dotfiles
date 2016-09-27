@@ -1,12 +1,13 @@
-alias push = 'git push'
-alias mt = 'git mergetool'
-alias df = 'git difftool'
-alias fa = 'git fetch --all'
-alias st = 'git status'
-alias glg = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias rebc = 'git rebase --continue'
-alias rebs = 'git rebase --skip'
-alias reba = 'git rebase --abort'
+#!/bin/bash
+alias push='git push'
+alias mt='git mergetool'
+alias df='git difftool'
+alias fa='git fetch --all'
+alias st='git status'
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias rebc='git rebase --continue'
+alias rebs='git rebase --skip'
+alias reba='git rebase --abort'
 
 function rh() {
     if ! [ -z "$1" -o -z "$2" ]; then
@@ -35,14 +36,14 @@ function commit() {
 
 function pull() {
   if ! [ -z "$1" -a -z "$2" ]; then
-      origin = $1
-      remoteBranch = $2
+      origin=$1
+      remoteBranch=$2
   elif ! [ -z "$1"]; then
-      origin = 'origin'
-      remoteBranch = $1
+      origin='origin'
+      remoteBranch=$1
   else
-      origin = 'origin'
-      remoteBranch = `git branch`
+      origin='origin'
+      remoteBranch=`git branch`
   fi
   git pull --rebase $origin/$remoteBranch
 }
@@ -57,25 +58,25 @@ function lb {
 
 function sb() {
     if ! [ -z "$1" -a -z "$2" ]; then
-        remote = $1
-        localBranch = $2
-    elif ! [ -z "$1"]
-        remote = 'origin'
-        localBranch = $1
+        remote=$1
+        localBranch=$2
+    elif ! [ -z "$1"]; then
+        remote='origin'
+        localBranch=$1
     else
-        remote = 'origin'
-        localBranch = `git branch`
+        remote='origin'
+        localBranch=`git branch`
     fi
     git branch --set-upstream-to=$remote/$localBranch
 }
 
 function nf() {
     if ! [ -z "$1" -a -z "$2" ]; then
-        upstream = $1
-        newFeatureName = $2
+        upstream=$1
+        newFeatureName=$2
     elif ! [ -z "$1" ]; then
-        upstream = 'master'
-        newFeature = $1
+        upstream='master'
+        newFeature=$1
     else
         echo 'You must provide at least a new feature name. Try: nf my-feature-name'
         set -e
