@@ -45,7 +45,7 @@ function pull() {
       origin='origin'
       remoteBranch=`git branch`
   fi
-  git pull --rebase $origin/$remoteBranch
+  git pull --rebase $origin $remoteBranch
 }
 
 function lb {
