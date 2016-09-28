@@ -1,5 +1,9 @@
 # Git Enhancements
 
+1. CLI auto-completion
+2. Current branch in shell prompt
+3. Shortcuts (defined below)
+
 ```bash
 # Resetting/cleaning
 rh # reset --hard and clean -fd
