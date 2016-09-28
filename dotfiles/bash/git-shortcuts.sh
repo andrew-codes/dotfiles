@@ -1,13 +1,16 @@
 #!/bin/bash
 alias push='git push'
 alias mt='git mergetool'
-alias df='git difftool'
+alias dt='git difftool'
 alias fa='git fetch --all'
 alias st='git status'
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias rebc='git rebase --continue'
-alias rebs='git rebase --skip'
-alias reba='git rebase --abort'
+alias rb='git rebase'
+alias rbo='git rebase --onto'
+alias rbc='git rebase --continue'
+alias rbs='git rebase --skip'
+alias rba='git rebase --abort'
+alias gui='git gui'
 
 function rh() {
     if ! [ -z "$1" -o -z "$2" ]; then

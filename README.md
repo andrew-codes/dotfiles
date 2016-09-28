@@ -16,3 +16,6 @@ cd devtools
 # Update ./git/.gitconfig in edtitor
 npm start
 ```
+## What can it do?
+
+* [git enhancements](./dotfiles/git.md)
