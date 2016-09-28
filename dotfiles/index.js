@@ -28,11 +28,11 @@ const symlinkFilesTo = (dest) => (fileRefs) => {
     return fileRefs;
 };
 
-const bashDirPath = path.resolve('bash');
+const bashDirPath = path.resolve(__dirname, 'bash');
 const bashFiles = utils.readdir(bashDirPath)
     .then(includePath(bashDirPath))
 
-const gitDirPath = path.resolve('git');
+const gitDirPath = path.resolve(__dirname, 'git');
 const gitFiles = utils.readdir(gitDirPath)
     .then(includePath(gitDirPath));
 
