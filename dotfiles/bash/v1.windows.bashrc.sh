@@ -10,10 +10,15 @@ function v1() {
     `$command`
 }
 
-# function v1l ()
-# {
-#     v1 license:dev
-# }
+function v1l ()
+{
+    bake license:dev
+}
+
+function v1db ()
+{
+    v1 initializedb
+}
 
 function v1up ()
 {
