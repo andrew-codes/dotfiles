@@ -76,12 +76,12 @@ function sb() {
 }
 
 function nf() {
-    if ! [ -z "$2" ]; then
+    if ! [ -z "$1" -o -z "$2" ]; then
         upstream=$1
-        newFeature=$2
+        newFeatureName=$2
     elif ! [ -z "$1" ]; then
         upstream='master'
-        newFeature=$1
+        newFeatureName=$1
     else
         echo 'You must provide at least a new feature name. Try: nf my-feature-name'
         return
@@ -89,8 +89,8 @@ function nf() {
     stash
     git checkout $upstream
     pull
-    git checkout -b $newFeature
-    push
+    git checkout -b $newFeatureName
+    push origin $newFeatureName
     sb
 }
 
