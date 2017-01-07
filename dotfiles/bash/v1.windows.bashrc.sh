@@ -25,12 +25,10 @@ function v1up ()
 
 v1nuke ()
 {
-  DemoDataDirectory=$DEV_HOME/Data/Demo
-
-  Version="${1:-16.1}"
-  DemoDataFile=$DemoDataDirectory/$Version/V1Demo-$Version.0.0.bak
-  if [ ! -f $DemoDataDirectory/$Version ]; then
-    mkdir -p $DemoDataDirectory/$Version
+  Version="${1:-16.3}"
+  DemoDataFile=$DEMO_DATA_HOME/$Version/V1Demo-$Version.0.0.bak
+  if [ ! -f $DEMO_DATA_HOME/$Version ]; then
+    mkdir -p $DEMO_DATA_HOME/$Version
   fi
   if [ ! -f $DemoDataFile ]; then
     curl http://artifactory.dev.corp.versionone.net/artifactory/lifecycle-demodata/$Version/V1Demo-$Version.0.0.bak --output $DemoDataFile

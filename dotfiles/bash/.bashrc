@@ -5,6 +5,7 @@ DEV_HOME=$HOME/Developer
 REPO_HOME=$DEV_HOME/repositories
 DEVTOOLS_HOME=$REPO_HOME/dotfiles
 DEVELOPER_UTILITIES_HOME=$DEV_HOME/utilities
+DEMO_DATA_HOME=$DEV_HOME/data/Demo
 # End configuration -------
 
 
