@@ -1,4 +1,5 @@
 #!/bin/bash
+
 alias push='git push'
 alias mt='git mergetool'
 alias dt='git difftool'
@@ -10,7 +11,8 @@ alias rbo='git rebase --onto'
 alias rbc='git rebase --continue'
 alias rbs='git rebase --skip'
 alias rba='git rebase --abort'
-alias gui='git gui'
+osIs Darwin && alias gui='gitx'
+osIs Cywgin && alias gui='git gui'
 
 function rh() {
     if ! [ -z "$1" -o -z "$2" ]; then
@@ -29,7 +31,7 @@ function stash() {
 	fi
 }
 
-function commit() {
+function cm() {
     if ! [ -z "$1" ]; then
         git commit -m "$1"
     else
@@ -74,15 +76,15 @@ function sb() {
 }
 
 function nf() {
-    if ! [ -z "$1" -a -z "$2" ]; then
+    if ! [ -z "$2" ]; then
         upstream=$1
-        newFeatureName=$2
+        newFeature=$2
     elif ! [ -z "$1" ]; then
         upstream='master'
         newFeature=$1
     else
         echo 'You must provide at least a new feature name. Try: nf my-feature-name'
-        set -e
+        return
     fi
     stash
     git checkout $upstream

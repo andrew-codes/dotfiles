@@ -1,4 +1,5 @@
-# OSX
-if [ "$OSTYPE" == "darwin"* ]; then
-    echo 'OSX target'
-fi
+#!/bin/bash
+
+function jsf() {
+    pbpaste | highlight --syntax=js -O rtf | pbcopy
+}

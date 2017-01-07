@@ -1,7 +1,7 @@
 alias bake="bundle exec rake"
 
 function v1() {
-    if [-f ./gulp ]; then
+    if [ -f ./gulp ]; then
         command='./gulp "$@"'
     else
         echo 'No ./gulp file exists.'

@@ -2,6 +2,10 @@ const utils = require('./../utils');
 const path = require('path');
 const fs = require('fs');
 
+const filterNonBashConfigFiles = (dirPath) => (fileRefs) => fileRefs.filter((fileRef) => (
+    fileRef === '.bashrc' || fileRef== '.bash_profile'
+));
+
 const includePath = (dirPath) => (fileRefs) => fileRefs.map((fileRef) => ({
         fileRef: fileRef,
         fullPath: path.join(dirPath, fileRef)
@@ -30,6 +34,7 @@ const symlinkFilesTo = (dest) => (fileRefs) => {
 
 const bashDirPath = path.resolve(__dirname, 'bash');
 const bashFiles = utils.readdir(bashDirPath)
+    .then(filterNonBashConfigFiles(bashDirPath))
     .then(includePath(bashDirPath))
 
 const gitDirPath = path.resolve(__dirname, 'git');
